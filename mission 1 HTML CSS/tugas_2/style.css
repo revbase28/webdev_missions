@@ -1,0 +1,71 @@
+input {
+  border: none;
+  box-shadow: 0 0 1px 0 rgb(56 64 79 / 30%), 0 1px 1px 0 rgb(9 24 54 / 24%),
+    0 2px 5px 0 rgb(9 24 54 / 6%);
+}
+
+.intro-content,
+.form-container {
+  border-radius: 0.25rem;
+}
+
+.intro-content {
+  background-color: rgb(233, 236, 239);
+}
+
+.form-container {
+  background-color: #f3f4f6;
+}
+
+.intro-content h5,
+.intro-content h4 {
+  font-weight: 400;
+}
+
+.txt-grey {
+  color: #778282;
+}
+
+.link-red,
+.link-red:hover {
+  color: #de3f1c;
+}
+
+.link-grey,
+.link-grey:hover {
+  color: #778298;
+}
+
+.link-grey:hover {
+  text-decoration: underline;
+}
+
+.link-red {
+  font-weight: 500;
+}
+
+.btn-white,
+.btn-green {
+  outline: none;
+  border-style: none;
+  font-weight: 600;
+  box-shadow: 0 0 1px 0 rgb(56 64 79 / 30%), 0 1px 1px 0 rgb(9 24 54 / 24%),
+    0 2px 5px 0 rgb(9 24 54 / 6%);
+}
+
+.btn-green {
+  background-color: #65d777;
+  color: white;
+}
+
+.btn-white {
+  background-color: white;
+}
+
+.btn-half-right-rounded {
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.input-half-left-rounded {
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
