@@ -1,0 +1,76 @@
+body {
+  background-image: url("../img/Asset\ 16@2x.png");
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.overlay-container {
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-container img {
+  width: 10%;
+  height: auto;
+  opacity: 0;
+}
+
+.small-cloud,
+.big-cloud,
+.mountain,
+.vegetation-back,
+.vegetation-front,
+.temple {
+  position: absolute;
+}
+
+.vegetation-back,
+.vegetation-front {
+  bottom: -6vh;
+}
+
+.small-cloud {
+  z-index: 1;
+  left: 0px;
+  top: 12vh;
+  width: 100vh;
+}
+
+.big-cloud {
+  z-index: 2;
+  left: 0px;
+  bottom: 14vh;
+}
+
+.mountain {
+  z-index: 3;
+  bottom: 0px;
+  left: 0px;
+}
+
+.vegetation-back {
+  z-index: 4;
+  left: 0px;
+}
+
+.temple {
+  z-index: 5;
+  height: 90vh;
+  bottom: 0px;
+  right: 12vh;
+}
+
+.vegetation-front {
+  z-index: 6;
+  left: 0px;
+}

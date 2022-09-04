@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/animate.js"></script>
+  </head>
+  <body>
+    <img src="assets/img/Mountain.svg" class="mountain" id="mountain" />
+    <img
+      src="assets/img/Vegetation back.svg"
+      class="vegetation-back"
+      id="vegBack"
+    />
+    <img
+      src="assets/img/Vegetation front.svg"
+      class="vegetation-front"
+      id="vegFront"
+    />
+    <img src="assets/img/Newest/Temple.png" class="temple" id="temple" />
+    <img src="assets/img/Big Cloud.svg" class="big-cloud" id="bigCloud" />
+    <img src="assets/img/Small Cloud.svg" class="small-cloud" id="smallCloud" />
+    <div class="overlay-container">
+      <img src="assets/img/Asset 2.svg" id="centerLogo" />
+    </div>
+
+    <script>
+      window.addEventListener("load", function (event) {
+        animate({
+          duration: 2500,
+          timing: function (timeFraction) {
+            return 1 - bounce(1 - timeFraction);
+          },
+          draw: function (progress) {
+            vegFront.style.bottom = -80 + progress * 74 + "vh";
+            vegBack.style.bottom = -80 + progress * 74 + "vh";
+            temple.style.bottom = -80 + progress * 80 + "vh";
+          },
+        });
+
+        animate({
+          duration: 3000,
+          timing: function (timeFraction) {
+            return 1 - bounce(1 - timeFraction);
+          },
+          draw: function (progress) {
+            mountain.style.bottom = -80 + progress * 80 + "vh";
+          },
+        });
+
+        animate({
+          duration: 3200,
+          timing: function (timeFraction) {
+            return 1 - bounce(1 - timeFraction);
+          },
+          draw: function (progress) {
+            bigCloud.style.bottom = -80 + progress * 94 + "vh";
+            if (progress === 1) {
+              animate({
+                duration: 3000,
+                timing: function (timeFraction) {
+                  return timeFraction;
+                },
+                draw: function (progress) {
+                  centerLogo.style.opacity = progress;
+                  centerLogo.style.transform =
+                    "rotate(" + progress * 360 + "deg)";
+                },
+              });
+            }
+          },
+        });
+
+        animateEndless({
+          timing: function (timeFraction) {
+            return timeFraction;
+          },
+          draw: function (progress) {
+            smallCloud.style.left = progress + "vh";
+          },
+          speed: 120,
+        });
+      });
+    </script>
+  </body>
+</html>
