@@ -13,6 +13,10 @@ function animate({ duration, draw, timing }) {
   });
 }
 
+function back(x, timeFraction) {
+  return Math.pow(timeFraction, 2) * ((x + 1) * timeFraction - x);
+}
+
 function animateEndless({ draw, timing, speed }) {
   let start = performance.now();
   requestAnimationFrame(function animate(time) {
@@ -26,18 +30,16 @@ function animateEndless({ draw, timing, speed }) {
   });
 }
 
-function bounce(timeFraction) {
-  for (let a = 0, b = 1; 1; a += b, b /= 2) {
-    if (timeFraction >= (7 - 4 * a) / 11) {
-      return (
-        -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-      );
+function dollyEffect(elem, interval, initSize, maxSize) {
+  let size = initSize;
+  let direction = 1;
+  setInterval(function () {
+    elem.style.width = size + "%";
+    size = size + 0.05 * direction;
+    if (size >= maxSize) {
+      direction = -1;
+    } else if (size <= initSize) {
+      direction = 1;
     }
-  }
-}
-
-function makeEaseOut(timing) {
-  return function (timeFraction) {
-    return 1 - timing(1 - timeFraction);
-  };
+  }, interval);
 }

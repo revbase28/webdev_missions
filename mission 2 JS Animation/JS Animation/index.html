@@ -28,7 +28,7 @@
         animate({
           duration: 2500,
           timing: function (timeFraction) {
-            return 1 - bounce(1 - timeFraction);
+            return 1 - back(1.2, 1 - timeFraction);
           },
           draw: function (progress) {
             vegFront.style.bottom = -80 + progress * 74 + "vh";
@@ -40,7 +40,7 @@
         animate({
           duration: 3000,
           timing: function (timeFraction) {
-            return 1 - bounce(1 - timeFraction);
+            return 1 - back(1.2, 1 - timeFraction);
           },
           draw: function (progress) {
             mountain.style.bottom = -80 + progress * 80 + "vh";
@@ -50,7 +50,7 @@
         animate({
           duration: 3200,
           timing: function (timeFraction) {
-            return 1 - bounce(1 - timeFraction);
+            return 1 - back(1.2, 1 - timeFraction);
           },
           draw: function (progress) {
             bigCloud.style.bottom = -80 + progress * 94 + "vh";
@@ -64,6 +64,9 @@
                   centerLogo.style.opacity = progress;
                   centerLogo.style.transform =
                     "rotate(" + progress * 360 + "deg)";
+                  if (progress === 1) {
+                    dollyEffect(centerLogo, 20, 10, 12);
+                  }
                 },
               });
             }
